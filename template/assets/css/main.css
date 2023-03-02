@@ -11,9 +11,7 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Roboto", sans-serif;
   --font-secondary: "Work Sans", sans-serif;
 }
@@ -155,11 +153,11 @@ section {
   text-decoration: underline;
 }
 
-.breadcrumbs ol li + li {
+.breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li + li::before {
+.breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
   color: #fff;
@@ -217,8 +215,7 @@ section {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #fff;
-  border-color: var(--color-primary) transparent var(--color-primary)
-    transparent;
+  border-color: var(--color-primary) transparent var(--color-primary) transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -304,7 +301,7 @@ section {
     position: relative;
   }
 
-  .navbar > ul > li {
+  .navbar>ul>li {
     white-space: nowrap;
     padding: 10px 0 10px 28px;
   }
@@ -332,7 +329,7 @@ section {
     margin-left: 5px;
   }
 
-  .navbar > ul > li > a:before {
+  .navbar>ul>li>a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -346,7 +343,7 @@ section {
   }
 
   .navbar a:hover:before,
-  .navbar li:hover > a:before,
+  .navbar li:hover>a:before,
   .navbar .active:before {
     visibility: visible;
     width: 100%;
@@ -355,7 +352,7 @@ section {
   .navbar a:hover,
   .navbar .active,
   .navbar .active:focus,
-  .navbar li:hover > a {
+  .navbar li:hover>a {
     color: #fff;
   }
 
@@ -392,11 +389,11 @@ section {
 
   .navbar .dropdown ul a:hover,
   .navbar .dropdown ul .active:hover,
-  .navbar .dropdown ul li:hover > a {
+  .navbar .dropdown ul li:hover>a {
     color: var(--color-primary);
   }
 
-  .navbar .dropdown:hover > ul {
+  .navbar .dropdown:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -408,7 +405,7 @@ section {
     visibility: hidden;
   }
 
-  .navbar .dropdown .dropdown:hover > ul {
+  .navbar .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
     left: 100%;
@@ -421,12 +418,13 @@ section {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover > ul {
+  .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
 }
 
 @media (min-width: 1280px) {
+
   .mobile-nav-show,
   .mobile-nav-hide {
     display: none;
@@ -484,7 +482,7 @@ section {
   .navbar a:hover,
   .navbar .active,
   .navbar .active:focus,
-  .navbar li:hover > a {
+  .navbar li:hover>a {
     color: #fff;
   }
 
@@ -498,8 +496,8 @@ section {
     border: 1px solid #222428;
   }
 
-  .navbar .dropdown > .dropdown-active,
-  .navbar .dropdown .dropdown > .dropdown-active {
+  .navbar .dropdown>.dropdown-active,
+  .navbar .dropdown .dropdown>.dropdown-active {
     display: block;
   }
 
@@ -546,11 +544,11 @@ section {
 /*--------------------------------------------------------------
 # Get Started Section
 --------------------------------------------------------------*/
-.explore-now .content {
+.get-started .content {
   padding: 30px 0;
 }
 
-.explore-now .content h3 {
+.get-started .content h3 {
   font-size: 36px;
   color: var(--color-secondary);
   font-weight: 600;
@@ -559,7 +557,7 @@ section {
   position: relative;
 }
 
-.explore-now .content h3:after {
+.get-started .content h3:after {
   content: "";
   position: absolute;
   display: block;
@@ -570,35 +568,35 @@ section {
   bottom: 0;
 }
 
-.explore-now .content p {
+.get-started .content p {
   font-size: 14px;
 }
 
-.explore-now .php-email-form {
+.get-started .php-email-form {
   background: #fff;
   padding: 30px;
   height: 100%;
 }
 
 @media (max-width: 575px) {
-  .explore-now .php-email-form {
+  .get-started .php-email-form {
     padding: 20px;
   }
 }
 
-.explore-now .php-email-form h3 {
+.get-started .php-email-form h3 {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.explore-now .php-email-form p {
+.get-started .php-email-form p {
   font-size: 14px;
   margin-bottom: 20px;
 }
 
-.explore-now .php-email-form .error-message {
+.get-started .php-email-form .error-message {
   display: none;
   color: #fff;
   background: #df1529;
@@ -608,7 +606,7 @@ section {
   font-weight: 600;
 }
 
-.explore-now .php-email-form .sent-message {
+.get-started .php-email-form .sent-message {
   display: none;
   color: #fff;
   background: #059652;
@@ -618,7 +616,7 @@ section {
   font-weight: 600;
 }
 
-.explore-now .php-email-form .loading {
+.get-started .php-email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
@@ -626,7 +624,7 @@ section {
   margin-bottom: 24px;
 }
 
-.explore-now .php-email-form .loading:before {
+.get-started .php-email-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -639,28 +637,28 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.explore-now .php-email-form input,
-.explore-now .php-email-form textarea {
+.get-started .php-email-form input,
+.get-started .php-email-form textarea {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
   border-radius: 0;
 }
 
-.explore-now .php-email-form input:focus,
-.explore-now .php-email-form textarea:focus {
+.get-started .php-email-form input:focus,
+.get-started .php-email-form textarea:focus {
   border-color: var(--color-primary);
 }
 
-.explore-now .php-email-form input {
+.get-started .php-email-form input {
   padding: 12px 15px;
 }
 
-.explore-now .php-email-form textarea {
+.get-started .php-email-form textarea {
   padding: 12px 15px;
 }
 
-.explore-now .php-email-form button[type="submit"] {
+.get-started .php-email-form button[type=submit] {
   background: var(--color-primary);
   border: 0;
   padding: 10px 30px;
@@ -669,7 +667,7 @@ section {
   border-radius: 4px;
 }
 
-.explore-now .php-email-form button[type="submit"]:hover {
+.get-started .php-email-form button[type=submit]:hover {
   background: rgba(254, 185, 0, 0.8);
 }
 
@@ -1425,20 +1423,14 @@ section {
   width: 100%;
 }
 
-.project-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet {
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: rgba(255, 255, 255, 0.7);
   opacity: 1;
 }
 
-.project-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet-active {
+.project-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--color-primary);
 }
 
@@ -1468,6 +1460,7 @@ section {
 }
 
 @media (max-width: 575px) {
+
   .project-details .swiper-button-prev,
   .project-details .swiper-button-next {
     display: none;
@@ -1710,7 +1703,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br + br {
+.contact .php-email-form .error-message br+br {
   margin-top: 25px;
 }
 
@@ -1763,7 +1756,7 @@ section {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form button[type=submit] {
   background: var(--color-primary);
   border: 0;
   padding: 10px 35px;
@@ -1772,7 +1765,7 @@ section {
   border-radius: 5px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form button[type=submit]:hover {
   background: rgba(254, 185, 0, 0.8);
 }
 
@@ -1940,7 +1933,7 @@ section {
   font-size: 18px;
 }
 
-.hero .info .btn-explore-now {
+.hero .info .btn-get-started {
   font-family: var(--font-primary);
   font-weight: 500;
   font-size: 16px;
@@ -1954,7 +1947,7 @@ section {
   border: 2px solid var(--color-primary);
 }
 
-.hero .info .btn-explore-now:hover {
+.hero .info .btn-get-started:hover {
   background: var(--color-primary);
 }
 
@@ -2202,7 +2195,7 @@ section {
   margin: 0;
 }
 
-.blog .blog-details .meta-top ul li + li {
+.blog .blog-details .meta-top ul li+li {
   padding-left: 20px;
 }
 
@@ -2266,7 +2259,7 @@ section {
   display: inline-block;
 }
 
-.blog .blog-details .meta-bottom .tags li + li::before {
+.blog .blog-details .meta-bottom .tags li+li::before {
   padding-right: 6px;
   color: var(--color-default);
   content: ",";
@@ -2330,7 +2323,7 @@ section {
   color: var(--color-secondary);
 }
 
-.blog .sidebar .sidebar-item + .sidebar-item {
+.blog .sidebar .sidebar-item+.sidebar-item {
   margin-top: 40px;
 }
 
@@ -2341,14 +2334,14 @@ section {
   position: relative;
 }
 
-.blog .sidebar .search-form form input[type="text"] {
+.blog .sidebar .search-form form input[type=text] {
   border: 0;
   padding: 4px;
   border-radius: 4px;
   width: calc(100% - 40px);
 }
 
-.blog .sidebar .search-form form input[type="text"]:focus {
+.blog .sidebar .search-form form input[type=text]:focus {
   outline: none;
 }
 
@@ -2382,7 +2375,7 @@ section {
   padding: 0;
 }
 
-.blog .sidebar .categories ul li + li {
+.blog .sidebar .categories ul li+li {
   padding-top: 10px;
 }
 
@@ -2405,7 +2398,7 @@ section {
   display: flex;
 }
 
-.blog .sidebar .recent-posts .post-item + .post-item {
+.blog .sidebar .recent-posts .post-item+.post-item {
   margin-top: 15px;
 }
 

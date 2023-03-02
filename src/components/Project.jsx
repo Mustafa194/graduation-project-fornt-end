@@ -6,9 +6,12 @@ const ProjectComponent = ({ project }) => {
     <div className="card mt-4">
       <div className="card-body">
         <h5 className="card-title">
-          {project.title} (<span>{project.year}</span>)
+          {project.project.name} (<span>{project.project.year}</span>)
         </h5>
-        <p>{project.description}</p>
+        <div>
+          <h6>College: {project.college.name}</h6>
+          <h6>Department: {project.department.name}</h6>
+        </div>
         <hr />
         <dl className="row mb-0">
           <dt className="col-sm-3">supervisor</dt>
@@ -31,7 +34,7 @@ const ProjectComponent = ({ project }) => {
         </dl>
 
         <div className="text-center">
-          <Link to={`/projects/${project.id}`} className="btn btn-dark">
+          <Link to={`/projects/${project.project.id}`} className="btn btn-dark">
             See Detail
           </Link>
         </div>

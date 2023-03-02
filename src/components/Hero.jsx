@@ -1,8 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 import { useLocation } from "react-router-dom";
 
-import "./../assets/css/Hero.css";
-
 const Hero = () => {
   const location = useLocation();
 

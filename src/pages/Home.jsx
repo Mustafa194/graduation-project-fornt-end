@@ -1,13 +1,11 @@
-import OurSystem from "./../features/home/components/OurSystem";
-import Features from "./../features/home/components/Features";
-
-import "./../assets/css/Home.css";
+import OurSystem from "./../components/OurSystem";
+// import Features from "./../features/home/components/Features";
 
 const MainSection = () => {
   return (
     <>
       <OurSystem />
-      <Features />
+      {/* <Features /> */}
     </>
   );
 };
