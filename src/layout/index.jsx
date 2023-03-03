@@ -12,9 +12,9 @@ const Layout = ({ children }) => {
 
       <main>{children}</main>
 
-      <BackToTop />
-
       <Footer />
+
+      <BackToTop />
     </>
   );
 };

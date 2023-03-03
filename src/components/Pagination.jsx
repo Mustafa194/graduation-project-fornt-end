@@ -1,34 +1,14 @@
+import { CPagination, CPaginationItem } from "@coreui/react";
+
 const Pagination = () => {
   return (
-    <nav aria-label="Page navigation example">
-      <ul className="pagination justify-content-center">
-        <li className="page-item">
-          <a className="page-link" href="#projects">
-            Previous
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#projects">
-            1
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#projects">
-            2
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#projects">
-            3
-          </a>
-        </li>
-        <li className="page-item">
-          <a className="page-link" href="#projects">
-            Next
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <CPagination align="center" aria-label="Page navigation example">
+      <CPaginationItem disabled>Previous</CPaginationItem>
+      <CPaginationItem>1</CPaginationItem>
+      <CPaginationItem>2</CPaginationItem>
+      <CPaginationItem>3</CPaginationItem>
+      <CPaginationItem>Next</CPaginationItem>
+    </CPagination>
   );
 };
 
