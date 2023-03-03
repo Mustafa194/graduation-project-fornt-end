@@ -1,6 +1,6 @@
 #hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./../src/assets/images/salahaddin_presidency.png");
+    url("./assets/images/salahaddin_presidency.png");
   height: 100vh;
   width: 100%;
   background-position: center;

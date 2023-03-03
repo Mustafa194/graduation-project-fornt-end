@@ -1,6 +1,6 @@
-import secureImage from "./../../../assets/images/secure.png";
-import reliableImage from "./../../../assets/images/reliable.png";
-import fastImage from "./../../../assets/images/fast.png";
+import fastImage from "./../assets/images/fast.png";
+import secureImage from "./../assets/images/secure.png";
+import reliableImage from "./../assets/images/reliable.png";
 
 const Features = () => {
   return (
@@ -21,7 +21,7 @@ const Features = () => {
             data-aos-delay="100"
           >
             <div class="member-img">
-              <img src={secureImage} class="img-fluid" alt="" />
+              <img src={reliableImage} class="img-fluid" alt="" />
             </div>
             <div class="member-info text-center">
               <h4>Reliable</h4>
@@ -39,7 +39,7 @@ const Features = () => {
             data-aos-delay="200"
           >
             <div class="member-img">
-              <img src={reliableImage} class="img-fluid" alt="" />
+              <img src={secureImage} class="img-fluid" alt="" />
             </div>
             <div class="member-info text-center">
               <h4>More Secure</h4>

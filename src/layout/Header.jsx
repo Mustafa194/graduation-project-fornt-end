@@ -1,5 +1,6 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+import Navbar from "../components/Navbar";
 import logo from "./../assets/images/logo.png";
 
 const Header = () => {
@@ -18,24 +19,7 @@ const Header = () => {
           </h1>
         </Link>
 
-        <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-        <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-        <nav id="navbar" className="navbar">
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/projects">Projects</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/faq">FAQ</NavLink>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
       </div>
     </header>
   );

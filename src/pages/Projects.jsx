@@ -49,7 +49,6 @@ const Projects = () => {
   }, [data]);
 
   console.log(data);
-  // console.log(projects);
 
   return (
     <section className="py-3 bg-dark-subtle" id="projects">
