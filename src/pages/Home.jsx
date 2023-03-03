@@ -1,7 +1,7 @@
 import OurSystem from "./../components/OurSystem";
 import Features from "./../components/Features";
 
-const MainSection = () => {
+const Home = () => {
   return (
     <>
       <OurSystem />
@@ -10,4 +10,4 @@ const MainSection = () => {
   );
 };
 
-export default MainSection;
+export default Home;

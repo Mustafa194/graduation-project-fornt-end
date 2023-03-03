@@ -1,3 +1,5 @@
+import fastImage from "./../assets/images/fast.png";
+
 const OurPurposes = () => {
   return (
     <section className=" bg-body-secondary pt-5">
@@ -14,7 +16,7 @@ const OurPurposes = () => {
             data-aos-delay="300"
           >
             <div className="member-img">
-              <img src="assets/img/fast.png" className="img-fluid" alt="" />
+              <img src={fastImage} className="img-fluid" alt="" />
             </div>
             <div className="member-info text-center">
               <h4>Fast</h4>
@@ -32,7 +34,7 @@ const OurPurposes = () => {
             data-aos-delay="300"
           >
             <div className="member-img">
-              <img src="assets/img/fast.png" className="img-fluid" alt="" />
+              <img src={fastImage} className="img-fluid" alt="" />
             </div>
             <div className="member-info text-center">
               <h4>Fast</h4>
@@ -50,7 +52,7 @@ const OurPurposes = () => {
             data-aos-delay="300"
           >
             <div className="member-img">
-              <img src="assets/img/fast.png" className="img-fluid" alt="" />
+              <img src={fastImage} className="img-fluid" alt="" />
             </div>
             <div className="member-info text-center">
               <h4>Fast</h4>
@@ -68,7 +70,7 @@ const OurPurposes = () => {
             data-aos-delay="300"
           >
             <div className="member-img">
-              <img src="assets/img/fast.png" className="img-fluid" alt="" />
+              <img src={fastImage} className="img-fluid" alt="" />
             </div>
             <div className="member-info text-center">
               <h4>Fast</h4>

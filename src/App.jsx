@@ -12,8 +12,8 @@ import Layout from "./layout";
 
 const App = () => {
   return (
-    <Layout>
-      <Routes>
+    <Routes>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="about" element={<About />} />
@@ -22,9 +22,10 @@ const App = () => {
           <Route path=":id" element={<Project />} />
         </Route>
         <Route path="contact" element={<Contact />} />
+        <Route path="404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Layout>
+      </Route>
+    </Routes>
   );
 };
 

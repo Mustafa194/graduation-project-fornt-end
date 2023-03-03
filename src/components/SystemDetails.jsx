@@ -1,10 +1,14 @@
+import monitorImage from "./../assets/images/moniter.png";
+import pngwingImage from "./../assets/images/pngwing.com.png";
+import laptopImage from "./../assets/images/Laptop.png";
+
 const SystemDetails = () => {
   return (
     <section>
       <div className="container">
         <div className="row my-5 align-items-center">
           <div className="col-lg-6 col-12">
-            <img src="assets/img/moniter.png" className="img-fluid" alt="" />
+            <img src={monitorImage} className="img-fluid" alt="" />
           </div>
           <div className="col-lg-6 col-12">
             <h2>Project Screen</h2>
@@ -58,17 +62,13 @@ const SystemDetails = () => {
             </p>
           </div>
           <div className="col-lg-6 col-12">
-            <img src="assets/img/Laptop.png" className="img-fluid" alt="" />
+            <img src={laptopImage} className="img-fluid" alt="" />
           </div>
         </div>
 
         <div className="row my-5 align-items-center">
           <div className="col-lg-6 col-12 ">
-            <img
-              src="assets/img/pngwing.com (1).png"
-              className="img-fluid"
-              alt=""
-            />
+            <img src={pngwingImage} className="img-fluid" alt="" />
           </div>
           <div className="col-lg-6 col-12">
             <h2>Opening Project</h2>

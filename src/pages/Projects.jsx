@@ -9,12 +9,10 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   const { data, fetchError, isLoading } = useFetch(
-    "http://localhost:4444/projects",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im11c3RhZmFhaG1lZG1hbmFnZXIiLCJpYXQiOjE2Nzc2NTExMjAsImV4cCI6MTY3NzczNzUyMH0.3Rrmn6N-75qlXf5F6XIdF9HeXdGA03TaM3M0uGX2zIM"
+    "http://localhost:4444/projects"
   );
 
   useEffect(() => {
-    console.log("useEffect");
     if (Object.keys(data).length !== 0) {
       setProjects(
         data.projects.map((project) => {
@@ -38,6 +36,7 @@ const Projects = () => {
               fullName: project.Supervisor.Person.fullName,
             },
             project: {
+              id: project.id,
               year: project.year,
               name: project.name,
               description: project.description,

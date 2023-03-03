@@ -12,6 +12,9 @@ const ProjectComponent = ({ project }) => {
           <h6>College: {project.college.name}</h6>
           <h6>Department: {project.department.name}</h6>
         </div>
+        <div>
+          <p>{project.project.description}</p>
+        </div>
         <hr />
         <dl className="row mb-0">
           <dt className="col-sm-3">supervisor</dt>

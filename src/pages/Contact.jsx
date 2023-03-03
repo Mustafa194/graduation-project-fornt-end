@@ -35,15 +35,15 @@ const Contact = () => {
 
             <div className="col-lg-3 col-md-6">
               <div className="info-item  d-flex flex-column justify-content-center align-items-center">
-                <i class="bi bi-globe2"></i>
+                <i className="bi bi-globe2"></i>
                 <h3>Website</h3>
                 <p>www.sue.com</p>
               </div>
             </div>
           </div>
 
-          <div class="row gy-4 mt-1">
-            <div class="col-lg-12">
+          <div className="row gy-4 mt-1">
+            <div className="col-lg-12">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1610.5627286082972!2d44.016473!3d36.1635016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40072356796dbecf%3A0x774c582eea92b5c5!2z2LPbldix24baqdin24zbldiq24wg2LLYp9mG2qnbhtuMINiz25XZhNin2K3bldiv24zZhg!5e0!3m2!1sen!2siq!4v1677788098450!5m2!1sen!2siq"
                 style={{ border: 0, width: "100%", height: "384px" }}
