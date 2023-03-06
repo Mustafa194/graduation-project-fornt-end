@@ -1,14 +1,14 @@
-import { CPagination, CPaginationItem } from "@coreui/react";
-
-const Pagination = () => {
+const Pagination = ({ filters, setFilters }) => {
   return (
-    <CPagination align="center" aria-label="Page navigation example">
-      <CPaginationItem disabled>Previous</CPaginationItem>
-      <CPaginationItem>1</CPaginationItem>
-      <CPaginationItem>2</CPaginationItem>
-      <CPaginationItem>3</CPaginationItem>
-      <CPaginationItem>Next</CPaginationItem>
-    </CPagination>
+    <div className="d-grid gap-2 col-12 col-lg-8 mx-auto mt-5">
+      <button
+        className="btn btn-outline-dark"
+        type="button"
+        // onClick={() => setPage(page + 1)}
+      >
+        Load more
+      </button>
+    </div>
   );
 };
 

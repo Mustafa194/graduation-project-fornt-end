@@ -3,7 +3,7 @@ const asyncHandler = async (promise) => {
     const data = await promise;
     return [data, null];
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return [null, error];
   }
 };

@@ -1,9 +1,9 @@
 import Select from "react-select";
 
 // data should be an array
-const MultipleSelect = ({ data }) => (
+const MultipleSelect = ({ data, defaultValue }) => (
   <Select
-    // defaultValue={data}
+    // defaultValue={defaultValue}
     isMulti
     name="colors"
     options={data}
