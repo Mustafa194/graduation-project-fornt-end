@@ -1,16 +1,32 @@
+import { useEffect, useState } from "react";
+
 import ProjectComponent from "./../components/Project";
 import Pagination from "./../components/Pagination";
 import Filters from "./../components/Filters";
-// import asyncHandler from "./../utils/asyncHandler";
-import useFetch from "./../hooks/useFetch";
-import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
+  const [data, setData] = useState({});
+  const [filters, setFilters] = useState({});
 
-  const { data, fetchError, isLoading } = useFetch(
-    "http://localhost:4444/projects"
-  );
+  useEffect(() => {
+    console.log("filters", filters);
+
+    const fetchData = async () => {
+      try {
+        const { data: projectData } = await axios.get(
+          "http://localhost:4444/projects"
+        );
+        setData(projectData);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, [filters]);
 
   useEffect(() => {
     if (Object.keys(data).length !== 0) {
@@ -47,11 +63,9 @@ const Projects = () => {
     }
   }, [data]);
 
-  console.log(data);
-
   return (
     <section className="py-3 bg-dark-subtle" id="projects">
-      <Filters />
+      <Filters setFilters={setFilters} />
 
       <div className="container d-flex flex-wrap justify-content-center">
         <div className="cards col-12 col-lg-8">

@@ -1,6 +1,15 @@
-import MultipleSelect from "./MultipleSelect";
+import Select from "react-select";
+import { useState } from "react";
 
-const SearchModal = () => {
+// import MultipleSelect from "./MultipleSelect";
+
+const SearchModal = ({ setTempFilters }) => {
+  const [college, setCollege] = useState("");
+  const [department, setDepartment] = useState("");
+  const [fromYear, setFromYear] = useState(new Date().getFullYear() - 1);
+  const [toYear, setToYear] = useState(new Date().getFullYear());
+  const [searchBy, setSearchBy] = useState("project");
+
   return (
     <div
       className="modal fade"
@@ -25,30 +34,34 @@ const SearchModal = () => {
           <div className="modal-body bg-body-tertiary">
             <div className="mb-2">
               <label className="col-form-label">Select College</label>
-              <MultipleSelect
-                className="form-select"
+              <Select
+                // className="form-select"
                 id="floatingSelect"
                 aria-label="Floating label select example"
-                data={[
+                options={[
                   { value: 1, label: "Science" },
                   { value: 2, label: "Engineering" },
                   { value: 3, label: "Education" },
                 ]}
+                onChange={(selectedOption) => setCollege(selectedOption.value)}
               />
             </div>
 
             <div className="mb-3">
               <label className="col-form-label">Select Departments</label>
-              <MultipleSelect
-                className="form-select"
+              <Select
+                // className="form-select"
                 id="floatingSelect"
                 aria-label="Floating label select example"
-                data={[
+                options={[
                   { value: 1, label: "Computer Science and IT" },
                   { value: 2, label: "Chemistry" },
                   { value: 3, label: "Physics" },
                   { value: 4, label: "Biology" },
                 ]}
+                onChange={(selectedOption) =>
+                  setDepartment(selectedOption.value)
+                }
               />
             </div>
 
@@ -61,6 +74,9 @@ const SearchModal = () => {
                     className="form-control"
                     id="floatingInput"
                     placeholder="a"
+                    onChange={(event) => {
+                      setFromYear(Number(event.target.value));
+                    }}
                   />
                   <label htmlFor="floatingInput">From</label>
                 </div>
@@ -70,6 +86,9 @@ const SearchModal = () => {
                     className="form-control"
                     id="floatingInput"
                     placeholder="a"
+                    onChange={(event) => {
+                      setToYear(Number(event.target.value));
+                    }}
                   />
                   <label htmlFor="floatingInput">To</label>
                 </div>
@@ -82,10 +101,11 @@ const SearchModal = () => {
                 className="form-select"
                 id="floatingSelect"
                 aria-label="Floating label select example"
+                onChange={(event) => setSearchBy(event.target.value)}
               >
-                <option>Project Title</option>
-                <option>Supervisor Name</option>
-                <option>Student name</option>
+                <option value="project">Project Title</option>
+                <option value="supervisor">Supervisor Name</option>
+                <option value="student">Student name</option>
               </select>
             </div>
           </div>
@@ -97,7 +117,21 @@ const SearchModal = () => {
             >
               Close
             </button>
-            <button type="button" className="btn btn-warning">
+            <button
+              type="button"
+              className="btn btn-warning"
+              onClick={() => {
+                const filters = {
+                  college,
+                  department,
+                  from: fromYear,
+                  to: toYear,
+                  searchBy,
+                };
+                console.log(filters);
+                setTempFilters(filters);
+              }}
+            >
               Apply
             </button>
           </div>
