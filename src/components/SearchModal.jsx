@@ -1,14 +1,103 @@
 import Select from "react-select";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import axios from "axios";
 
-// import MultipleSelect from "./MultipleSelect";
+const SelectWrapper = ({ inputRef, onChange, options, ...otherProps }) => {
+  function handleChange(event) {
+    // Overwrite the event with your own object if it doesn't exist
+    if (!event) {
+      event = {
+        target: inputRef,
+        value: "",
+      };
+    }
+    onChange(event);
+  }
+
+  return (
+    // Pass in the custom handleChange
+    <Select
+      isClearable
+      isSearchable
+      id="floatingSelect"
+      aria-label="Floating label select example"
+      options={options}
+      onChange={handleChange}
+      {...otherProps}
+    />
+  );
+};
 
 const SearchModal = ({ setTempFilters }) => {
-  const [college, setCollege] = useState("");
-  const [department, setDepartment] = useState("");
+  const [colleges, setColleges] = useState("");
+  const [departments, setDepartments] = useState("");
   const [fromYear, setFromYear] = useState(new Date().getFullYear() - 1);
   const [toYear, setToYear] = useState(new Date().getFullYear());
-  const [searchBy, setSearchBy] = useState("project");
+  const [searchBy, setSearchBy] = useState({
+    value: "project",
+    label: "Project Title",
+  });
+  const [selectedCollege, setSelectedCollege] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const collegeSelectRef = useRef();
+  const departmentSelectRef = useRef();
+  const searchBySelectRef = useRef();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data: collegeData } = await axios.get(
+          "http://localhost:4444/colleges"
+        );
+        setColleges(
+          collegeData.colleges.map((college) => {
+            return {
+              value: college.id,
+              label: college.name,
+            };
+          })
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log(selectedCollege);
+      try {
+        const { data: departmentsData } = await axios.get(
+          "http://localhost:4444/departments"
+        );
+        setDepartments(
+          selectedCollege
+            ? departmentsData.departments
+                .filter(
+                  (department) => department.collegeId === selectedCollege
+                )
+                .map((department) => {
+                  return {
+                    value: department.id,
+                    label: department.name,
+                  };
+                })
+            : departmentsData.departments.map((department) => {
+                return {
+                  value: department.id,
+                  label: department.name,
+                };
+              })
+        );
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, [selectedCollege]);
 
   return (
     <div
@@ -34,34 +123,23 @@ const SearchModal = ({ setTempFilters }) => {
           <div className="modal-body bg-body-tertiary">
             <div className="mb-2">
               <label className="col-form-label">Select College</label>
-              <Select
-                // className="form-select"
-                id="floatingSelect"
-                aria-label="Floating label select example"
-                options={[
-                  { value: 1, label: "Science" },
-                  { value: 2, label: "Engineering" },
-                  { value: 3, label: "Education" },
-                ]}
-                onChange={(selectedOption) => setCollege(selectedOption.value)}
+              <SelectWrapper
+                inputRef={collegeSelectRef}
+                onChange={(selectedOption) =>
+                  setSelectedCollege(selectedOption.value)
+                }
+                options={colleges}
               />
             </div>
 
             <div className="mb-3">
               <label className="col-form-label">Select Departments</label>
-              <Select
-                // className="form-select"
-                id="floatingSelect"
-                aria-label="Floating label select example"
-                options={[
-                  { value: 1, label: "Computer Science and IT" },
-                  { value: 2, label: "Chemistry" },
-                  { value: 3, label: "Physics" },
-                  { value: 4, label: "Biology" },
-                ]}
+              <SelectWrapper
+                options={departments}
                 onChange={(selectedOption) =>
-                  setDepartment(selectedOption.value)
+                  setSelectedDepartment(selectedOption.value)
                 }
+                inputRef={departmentSelectRef}
               />
             </div>
 
@@ -96,17 +174,19 @@ const SearchModal = ({ setTempFilters }) => {
             </div>
 
             <div className="mb-2">
-              <label className="col-form-label">Serach By</label>
-              <select
-                className="form-select"
+              <label className="col-form-label">Search By</label>
+              <SelectWrapper
+                // className="form-select"
+                onChange={(selectedOption) => setSearchBy(selectedOption)}
+                options={[
+                  { value: "project", label: "Project Title" },
+                  { value: "supervisor", label: "Supervisor Name" },
+                  { value: "student", label: "Student Name" },
+                ]}
+                inputRef={searchBySelectRef}
                 id="floatingSelect"
                 aria-label="Floating label select example"
-                onChange={(event) => setSearchBy(event.target.value)}
-              >
-                <option value="project">Project Title</option>
-                <option value="supervisor">Supervisor Name</option>
-                <option value="student">Student name</option>
-              </select>
+              />
             </div>
           </div>
           <div className="modal-footer">
@@ -122,13 +202,12 @@ const SearchModal = ({ setTempFilters }) => {
               className="btn btn-warning"
               onClick={() => {
                 const filters = {
-                  college,
-                  department,
+                  college: colleges,
+                  department: departments,
                   from: fromYear,
                   to: toYear,
                   searchBy,
                 };
-                console.log(filters);
                 setTempFilters(filters);
               }}
             >

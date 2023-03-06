@@ -11,17 +11,14 @@ const Projects = () => {
   const [filters, setFilters] = useState({});
 
   useEffect(() => {
-    console.log("filters", filters);
-
     const fetchData = async () => {
       try {
         const { data: projectData } = await axios.get(
           "http://localhost:4444/projects"
         );
         setData(projectData);
-        console.log(data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
 
