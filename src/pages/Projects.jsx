@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import ProjectComponent from "./../components/Project";
-// import Pagination from "./../components/Pagination";
+import Pagination from "./../components/Pagination";
 import Filters from "./../components/Filters";
 import axios from "axios";
 
@@ -26,42 +26,6 @@ const Projects = () => {
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    if (Object.keys(data).length !== 0) {
-      setProjects(
-        data.projects.map((project) => {
-          return {
-            college: {
-              id: project.Department.College.id,
-              name: project.Department.College.name,
-            },
-            department: {
-              id: project.Department.id,
-              name: project.Department.name,
-            },
-            students: project.Students.map((student) => {
-              return {
-                id: student.id,
-                fullName: student.Person.fullName,
-              };
-            }),
-            supervisor: {
-              id: project.Supervisor.id,
-              fullName: project.Supervisor.Person.fullName,
-            },
-            project: {
-              id: project.id,
-              year: project.year,
-              name: project.name,
-              description: project.description,
-            },
-          };
-        })
-      );
-      setProjectsData(projects);
-    }
-  }, [data]);
 
   useEffect(() => {
     if (!filters || Object.keys(filters).length === 0) {
@@ -99,9 +63,9 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* <div className="d-grid gap-2 col-12 col-lg-8 mx-auto mt-5">
+        <div className="d-grid gap-2 col-12 col-lg-8 mx-auto mt-5">
           <Pagination />
-        </div> */}
+        </div>
       </div>
     </section>
   );

@@ -6,6 +6,11 @@ const questions = [
     answer:
       "This system is used for archiving Salahaddin's University Senior Students' Graduation Projects and Researches",
   },
+  // {
+  //   question: "What are the advantages of this system",
+  //   answer:
+  //     "This system can create a huge opportunity for new senior students, because they can get ",
+  // },
 ];
 
 const FAQ = () => {
