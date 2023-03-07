@@ -10,27 +10,31 @@ const OurTeam = () => {
           <div className="col-md-6 col-lg-4">
             <div className="card bg-light">
               <div className="card-body text-center">
-                <img
+                {/* <img
                   src="https://randomuser.me/api/portraits/men/11.jpg"
                   className="rounded-circle mb-3"
                   alt=""
-                />
-                <h3 className="card-title mb-3">John Doe</h3>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+                /> */}
+                <h3
+                  className="card-title fs-2 mb-3"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Yousif Q. Khalid
+                </h3>
+                <p className="card-text fs-4" style={{ fontWeight: "bold" }}>
+                  UI/UX Designer
                 </p>
                 <a href="#">
-                  <i className="bi bi-twitter text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-twitter text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-facebook text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-facebook text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-linkedin text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-linkedin text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-instagram text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-instagram text-dark mx-1"></i>
                 </a>
               </div>
             </div>
@@ -39,27 +43,31 @@ const OurTeam = () => {
           <div className="col-md-6 col-lg-4">
             <div className="card bg-light">
               <div className="card-body text-center">
-                <img
+                {/* <img
                   src="https://randomuser.me/api/portraits/women/11.jpg"
                   className="rounded-circle mb-3"
                   alt=""
-                />
-                <h3 className="card-title mb-3">Jane Doe</h3>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+                /> */}
+                <h3
+                  className="card-title fs-2 mb-3"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Mohammed Z. Ahmed
+                </h3>
+                <p className="card-text fs-4" style={{ fontWeight: "bold" }}>
+                  Front-End Developer
                 </p>
                 <a href="#">
-                  <i className="bi bi-twitter text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-twitter text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-facebook text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-facebook text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-linkedin text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-linkedin text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-instagram text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-instagram text-dark mx-1"></i>
                 </a>
               </div>
             </div>
@@ -68,27 +76,31 @@ const OurTeam = () => {
           <div className="col-md-6 col-lg-4">
             <div className="card bg-light">
               <div className="card-body text-center">
-                <img
+                {/* <img
                   src="https://randomuser.me/api/portraits/men/12.jpg"
                   className="rounded-circle mb-3"
                   alt=""
-                />
-                <h3 className="card-title mb-3">Steve Smith</h3>
-                <p className="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Assumenda accusamus nobis sed cupiditate iusto? Quibusdam.
+                /> */}
+                <h3
+                  className="card-title fs-2 mb-3"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Mustafa A. Mohammed
+                </h3>
+                <p className="card-text fs-4" style={{ fontWeight: "bold" }}>
+                  Back-End Developer
                 </p>
                 <a href="#">
-                  <i className="bi bi-twitter text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-twitter text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-facebook text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-facebook text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-linkedin text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-linkedin text-dark mx-1"></i>
                 </a>
                 <a href="#">
-                  <i className="bi bi-instagram text-dark mx-1"></i>
+                  <i className="bi fs-3 bi-instagram text-dark mx-1"></i>
                 </a>
               </div>
             </div>

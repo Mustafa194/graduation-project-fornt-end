@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProjectComponent = ({ project }) => {
   return (
-    <div className="card mt-4">
+    <div className="card mt-4 border-1">
       <div className="card-body">
         <h5 className="card-title">
           {project.project.name} (<span>{project.project.year}</span>)
@@ -40,11 +40,11 @@ const ProjectComponent = ({ project }) => {
           </dd>
         </dl>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Link to={`/projects/${project.project.id}`} className="btn btn-dark">
             See Detail
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

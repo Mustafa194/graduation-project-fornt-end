@@ -13,13 +13,12 @@ const OurSystem = () => {
           <div className="col-lg-7">
             <h2>Our System</h2>
             <div className="our-story">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur.
+              <p className="fs-4">
+                This website consists of several pages that are divided into two
+                sections, the user section and the admin section. In the user
+                section, students can visit the website and learn about the
+                website and all the projects and a brief about Salahaddin
+                University.
               </p>
             </div>
           </div>

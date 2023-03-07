@@ -82,6 +82,8 @@ const Projects = () => {
         )
       );
 
+      console.log(filteredProjects);
+
       setProjectsData(filteredProjects);
     }
   }, [filters]);

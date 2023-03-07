@@ -8,9 +8,9 @@ const About = () => {
     <>
       <AboutSystem />
 
-      <OurPurposes />
+      {/* <OurPurposes /> */}
 
-      <SystemDetails />
+      {/* <SystemDetails /> */}
 
       <OurTeam />
     </>
