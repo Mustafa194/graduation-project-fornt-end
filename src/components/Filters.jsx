@@ -1,23 +1,34 @@
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
 
+// import SearchModal from "./SearchModal";
 import SearchModal from "./SearchModal";
 
 const Filters = ({ setFilters }) => {
   const [tempFilters, setTempFilters] = useState({});
   const [search, setSearch] = useState("");
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <section id="get-started" className="get-started section-bg bg-dark  py-4">
       <div className="container d-flex flex-wrap justify-content-center ">
         <div className="row mx-auto">
           <div className="col-auto">
-            <SearchModal setTempFilters={setTempFilters} />
+            {/* <SearchModal setTempFilters={setTempFilters} /> */}
+
+            <SearchModal
+              show={modalShow}
+              setModalShow={setModalShow}
+              onHide={() => setModalShow(false)}
+              setTempFilters={setTempFilters}
+            />
           </div>
 
           <div className="col-auto">
             <div className="input-group input-group-lg">
               <button
                 type="button"
+                onClick={() => setModalShow(true)}
                 className="btn btn-outline-warning"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
@@ -38,6 +49,15 @@ const Filters = ({ setFilters }) => {
                 }}
               >
                 submit
+              </button>
+              <button
+                type="button"
+                className="btn btn-danger text-light"
+                onClick={() => {
+                  setFilters({});
+                }}
+              >
+                reset filters
               </button>
             </div>
           </div>
