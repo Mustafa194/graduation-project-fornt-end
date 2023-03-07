@@ -9,7 +9,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [projectsData, setProjectsData] = useState([]);
   const [data, setData] = useState({});
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState(null);
   const filtersRef = useRef();
 
   useEffect(() => {
@@ -64,22 +64,25 @@ const Projects = () => {
   }, [data]);
 
   useEffect(() => {
-    if (Object.keys(filters).length !== 0) {
-      const filteredProjects = projects.filter((project) => {
-        return (
+    if (!filters || Object.keys(filters).length === 0) {
+      setProjectsData(projects);
+      filtersRef.current.scrollIntoView();
+    } else {
+      const filteredProjects = projects.filter(
+        (project) =>
           (filters?.search && project.project.name.includes(filters.search)) ||
           (filters?.year && project.project.year === filters.year) ||
           (filters?.college && project.college.id === filters.college) ||
           (filters?.department && project.department.id === filters.department)
-        );
-      });
+      );
+
+      setProjectsData(
+        projects.filter(
+          (project) => filters?.year && project.project.year === filters.year
+        )
+      );
 
       setProjectsData(filteredProjects);
-      console.log("after filtering", { projects });
-    } else {
-      setProjectsData(projects);
-      filtersRef.current.scrollIntoView();
-      console.log(filtersRef);
     }
   }, [filters]);
 

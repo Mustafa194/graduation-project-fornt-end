@@ -56,7 +56,7 @@ const Filters = ({ setFilters, filtersRef }) => {
                 type="button"
                 className="btn btn-danger text-light"
                 onClick={() => {
-                  setFilters({});
+                  setFilters(null);
                   document.getElementById("search").value = "";
                 }}
               >
