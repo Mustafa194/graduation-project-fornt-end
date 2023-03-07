@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 // import SearchModal from "./SearchModal";
 import SearchModal from "./SearchModal";
 
-const Filters = ({ setFilters }) => {
+const Filters = ({ setFilters, filtersRef }) => {
   const [tempFilters, setTempFilters] = useState({});
   const [search, setSearch] = useState("");
   const [modalShow, setModalShow] = useState(false);
@@ -37,6 +37,7 @@ const Filters = ({ setFilters }) => {
               </button>
               <input
                 type="text"
+                id="search"
                 className="form-control border-warning"
                 placeholder="Search"
                 onChange={(event) => setSearch(event.target.value)}
@@ -47,6 +48,7 @@ const Filters = ({ setFilters }) => {
                 onClick={() => {
                   setFilters({ ...tempFilters, search });
                 }}
+                ref={filtersRef}
               >
                 submit
               </button>
@@ -55,6 +57,7 @@ const Filters = ({ setFilters }) => {
                 className="btn btn-danger text-light"
                 onClick={() => {
                   setFilters({});
+                  document.getElementById("search").value = "";
                 }}
               >
                 reset filters

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import ProjectComponent from "./../components/Project";
 // import Pagination from "./../components/Pagination";
@@ -10,6 +10,7 @@ const Projects = () => {
   const [projectsData, setProjectsData] = useState([]);
   const [data, setData] = useState({});
   const [filters, setFilters] = useState({});
+  const filtersRef = useRef();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,12 +78,14 @@ const Projects = () => {
       console.log("after filtering", { projects });
     } else {
       setProjectsData(projects);
+      filtersRef.current.scrollIntoView();
+      console.log(filtersRef);
     }
   }, [filters]);
 
   return (
     <section className="py-3 bg-dark-subtle" id="projects">
-      <Filters setFilters={setFilters} />
+      <Filters setFilters={setFilters} filtersRef={filtersRef} />
 
       <div className="container d-flex flex-wrap justify-content-center">
         <div className="cards col-12 col-lg-8">
