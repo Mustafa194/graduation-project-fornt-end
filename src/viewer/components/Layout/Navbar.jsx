@@ -3,8 +3,6 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" className="navbar">
         <ul>
           <li>
