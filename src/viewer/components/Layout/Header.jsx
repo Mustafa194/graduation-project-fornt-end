@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
-import Navbar from "../components/Navbar";
-import logo from "./../assets/images/logo.png";
+import Navbar from "./Navbar";
+import logo from "./../../../assets/images/logo.png";
 
 const Header = () => {
   return (

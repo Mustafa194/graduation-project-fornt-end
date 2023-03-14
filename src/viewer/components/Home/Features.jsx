@@ -1,6 +1,6 @@
-import fastImage from "./../assets/images/fast.png";
-import secureImage from "./../assets/images/secure.png";
-import reliableImage from "./../assets/images/reliable.png";
+import fastImage from "./../../../assets/images/fast.png";
+import secureImage from "./../../../assets/images/secure.png";
+import reliableImage from "./../../../assets/images/reliable.png";
 
 const Features = () => {
   return (

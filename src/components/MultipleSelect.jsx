@@ -3,7 +3,7 @@ import Select from "react-select";
 // data should be an array
 const MultipleSelect = ({ data, defaultValue }) => (
   <Select
-    // defaultValue={defaultValue}
+    defaultValue={defaultValue}
     isMulti
     name="colors"
     options={data}

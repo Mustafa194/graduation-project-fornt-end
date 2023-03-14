@@ -1,5 +1,5 @@
-import OurSystem from "./../components/OurSystem";
-import Features from "./../components/Features";
+import OurSystem from "./../components/Home/OurSystem";
+import Features from "./../components/Home/Features";
 
 const Home = () => {
   return (

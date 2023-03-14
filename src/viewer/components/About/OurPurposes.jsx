@@ -1,4 +1,4 @@
-import fastImage from "./../assets/images/fast.png";
+import fastImage from "./../../../assets/images/fast.png";
 
 const OurPurposes = () => {
   return (

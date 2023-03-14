@@ -1,19 +1,18 @@
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import Projects from "./pages/Projects";
-import Project from "./pages/Project";
-import FAQ from "./pages/FAQ";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-
-import Layout from "./layout";
+import Home from "./viewer/pages/Home";
+import NotFound from "./viewer/pages/NotFound";
+import Projects from "./viewer/pages/Projects";
+import Project from "./viewer/pages/Project";
+import FAQ from "./viewer/pages/FAQ";
+import About from "./viewer/pages/About";
+import Contact from "./viewer/pages/Contact";
+import ViewerLayout from "./viewer/components/Layout/Layout";
 
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<ViewerLayout />}>
         <Route index element={<Home />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="about" element={<About />} />

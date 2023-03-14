@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 
-// import SearchModal from "./SearchModal";
 import SearchModal from "./SearchModal";
 
 const Filters = ({ setFilters, filtersRef }) => {

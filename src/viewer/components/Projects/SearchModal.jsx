@@ -343,7 +343,7 @@ const Modal = ({ setTempFilters, setModalShow, ...props }) => {
           </div>
         </div>
 
-        {/* <div className="mb-2">
+        <div className="mb-2">
           <label className="col-form-label">Search By</label>
           <SelectWrapper
             // className="form-select"
@@ -357,7 +357,7 @@ const Modal = ({ setTempFilters, setModalShow, ...props }) => {
             id="floatingSelect"
             aria-label="Floating label select example"
           />
-        </div> */}
+        </div>
       </BootstrapModal.Body>
       <BootstrapModal.Footer>
         <button

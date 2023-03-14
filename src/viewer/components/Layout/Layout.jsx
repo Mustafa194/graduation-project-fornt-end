@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
 import Header from "./Header";
-import Hero from "../components/Hero";
+import Hero from "./Hero";
 import Footer from "./Footer";
-import BackToTop from "../components/BackToTop";
+import BackToTop from "./BackToTop";
 
 const Layout = ({ children }) => {
   return (

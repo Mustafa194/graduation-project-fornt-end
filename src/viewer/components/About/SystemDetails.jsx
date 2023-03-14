@@ -1,6 +1,6 @@
-import monitorImage from "./../assets/images/moniter.png";
-import pngwingImage from "./../assets/images/pngwing.com.png";
-import laptopImage from "./../assets/images/Laptop.png";
+import monitorImage from "./../../../assets/images/moniter.png";
+import pngwingImage from "./../../../assets/images/pngwing.com.png";
+import laptopImage from "./../../../assets/images/Laptop.png";
 
 const SystemDetails = () => {
   return (
